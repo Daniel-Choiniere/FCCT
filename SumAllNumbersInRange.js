@@ -6,15 +6,23 @@
 // Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
 
 function sumAll(arr) {
-  var sorted = arr.sort();
-
   var total = 0;
-  for (i = sorted[1]; i <= sorted[0]; i++) {
+
+  if (arr[0] < arr[1]) {
+    var temp = arr[0];
+    arr[0] = arr[1];
+    arr[1] = temp;
+  }
+
+  for (i = arr[1]; i <= arr[0]; i++) {
     total += i;
   }
   return total;
 }
 
 console.log(sumAll([5, 10]));
+console.log(sumAll([10, 5]));
+console.log(sumAll([4, 1]));
+console.log(sumAll([1, 4]));
 
-// TIME = 15m
+// TIME = 17m
