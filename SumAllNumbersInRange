@@ -1,0 +1,7 @@
+function sumAll(arr) {
+  var sum = arr[0] + arr[1];
+  
+  return 1;
+}
+
+sumAll([1, 4]);
