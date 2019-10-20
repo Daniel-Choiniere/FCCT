@@ -6,12 +6,12 @@
 // because it contains the name and its value, that was passed on as the second argument.
 
 function whatIsInAName(collection, source) {
-  var answer = {};
+  var answer = [];
   collection.forEach(function(element) {
     // console.log(element.last);
     // console.log(source.last);
     if (element.last == source.last) {
-      answer = element;
+      answer.push(element);
     }
   });
   return answer;
@@ -30,5 +30,11 @@ var test2 = whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
   apple: 1
 });
 
-console.log(test1);
-console.log(test2);
+var test3 = whatIsInAName(
+  [{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
+  { apple: 1, bat: 2 }
+);
+
+// console.log(test1);
+// console.log(test2);
+console.log(test3);
