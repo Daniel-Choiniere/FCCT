@@ -10,7 +10,7 @@
 //     - just add way to the end and return
 // check if word does not contain any vowels
 //     - add ay to the end and return
-// else take the first letter and move it to the end of the word and add ay
+// else take the first letter until you hit a vowel and move to the end of the word and add ay
 
 function translatePigLatin(str) {
   if (str[0].match(/[aeiouAEIOU]/)) {
