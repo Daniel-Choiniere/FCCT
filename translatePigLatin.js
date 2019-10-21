@@ -13,16 +13,33 @@
 // else take the first letter and move it to the end of the word and add ay
 
 function translatePigLatin(str) {
+  if (str[0].match(/[aeiouAEIOU]/)) {
+    return str + "way";
+  }
+
+  if (str.match(/[aeiouAEIOU]/) == null) {
+    return str + "ay";
+  }
+
+  var vowels = [];
   for (var i = 0; i < str.length; i++) {
-    if (str[i].indexOf("a", "e", "i", "o", "u") != -1) {
-      var pigged = str + "way";
-    }
-    if (str.indexOf("a", "e", "i", "o", "u") == -1) {
-      var pigged = str + "ay";
+    if (str[i].match(/[aeiouAEIOU]/) == null) {
+      vowels.push(str[i]);
+    } else {
+      break;
     }
   }
-  return pigged;
+  var subStr = str.substr(vowels.length);
+
+  for (var j = 0; j < vowels.length; j++) {
+    subStr += str[j];
+  }
+  return subStr + "ay";
 }
 
-console.log(translatePigLatin("algorithim"));
-console.log(translatePigLatin("rhythm"));
+// console.log(translatePigLatin("algorithim"));
+// console.log(translatePigLatin("rhythm"));
+// console.log(translatePigLatin("glove"));
+
+console.log(translatePigLatin("california"));
+console.log(translatePigLatin("paragraphs"));
