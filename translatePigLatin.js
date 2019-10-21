@@ -17,8 +17,12 @@ function translatePigLatin(str) {
     if (str[i].indexOf("a", "e", "i", "o", "u") != -1) {
       var pigged = str + "way";
     }
+    if (str.indexOf("a", "e", "i", "o", "u") == -1) {
+      var pigged = str + "ay";
+    }
   }
   return pigged;
 }
 
 console.log(translatePigLatin("algorithim"));
+console.log(translatePigLatin("rhythm"));
