@@ -9,16 +9,27 @@
 // - build the new array up
 // - match the pairs up with thier counterpart
 // return the completed array
-
+3;
 function pairElement(str) {
+  var dnaPairs = {
+    G: "C",
+    C: "G",
+    T: "A",
+    A: "T"
+  };
+
   var arr1 = str.split("");
   var arr2 = [];
 
   for (i = 0; i < arr1.length; i++) {
     arr2[i] = arr1[i].split(",");
+    arr2[i][1] = dnaPairs[arr1[i]];
   }
-
   return arr2;
 }
 
-console.log(pairElement("GATCGA"));
+console.log(pairElement("ATCGA"));
+console.log(pairElement("TTGAG"));
+console.log(pairElement("CTCTA"));
+
+// TIME = 47mins
