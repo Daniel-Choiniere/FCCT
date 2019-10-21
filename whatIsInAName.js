@@ -5,30 +5,43 @@
 // and the second argument is { last: "Capulet" }, then you must return the third object from the array (the first argument),
 // because it contains the name and its value, that was passed on as the second argument.
 
+// function whatIsInAName(collection, source) {
+//   var answer = [];
+//   collection.forEach(function(element) {
+//     // console.log(element.last);
+//     // console.log(source.last);
+//     if (element.last == source.last) {
+//       answer.push(element);
+//     }
+//   });
+//   return answer;
+// }
+
 function whatIsInAName(collection, source) {
   var answer = [];
-  collection.forEach(function(element) {
-    // console.log(element.last);
-    // console.log(source.last);
-    if (element.last == source.last) {
-      answer.push(element);
-    }
-  });
+
+  for (var i = 0; i < collection.length; i++) {
+    // console.log(collection[i]);
+    var collectionKeys = Object.keys(collection[i]);
+    var sourceKeys = Object.keys(source);
+    console.log("Collection keys", collectionKeys);
+    console.log("Source keys", sourceKeys);
+  }
   return answer;
 }
 
-var test1 = whatIsInAName(
-  [
-    { first: "Romeo", last: "Montague" },
-    { first: "Mercutio", last: null },
-    { first: "Tybalt", last: "Capulet" }
-  ],
-  { last: "Capulet" }
-);
+// var test1 = whatIsInAName(
+//   [
+//     { first: "Romeo", last: "Montague" },
+//     { first: "Mercutio", last: null },
+//     { first: "Tybalt", last: "Capulet" }
+//   ],
+//   { last: "Capulet" }
+// );
 
-var test2 = whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
-  apple: 1
-});
+// var test2 = whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
+//   apple: 1
+// });
 
 var test3 = whatIsInAName(
   [{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
