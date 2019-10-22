@@ -7,37 +7,21 @@
 // if the next value is not +1 the previous value
 // we return that value converted back to an alpha character
 
-// function fearNotLetter(str) {
-//   var arr = [];
-//   for (var i = 0; i < str.length; i++) {
-//     arr.push(str[i].charCodeAt());
-//   }
-
-//   for (var i = 1; i < arr.length; i++) {
-//     if (arr[0] + 1 == arr[1]) {
-//       return String.fromCharCode(arr[0] + 1);
-//     }
-//   }
-
-//   return arr;
-// }
-
 function fearNotLetter(str) {
   var alphabet = "abcdefghijklmnopqrstuvwxyz";
   var arrAlphabet = alphabet.split("");
   //   console.log(arrAlphabet);
 
   if (str == alphabet) {
-    return "undefined";
+    return undefined;
   }
 
   var alphabetIndex = arrAlphabet.indexOf(str[0]);
-  var endAlphabetindex = str.length;
-  //   console.log(alphabetIndex);
-  //   console.log(endAlphabetindex);
+  var endAlphabetindex = arrAlphabet.indexOf(str[str.length - 1]);
+  //   console.log(alphabetIndex, endAlphabetindex);
 
   var slicedAlphabet = arrAlphabet.slice(alphabetIndex, endAlphabetindex);
-  //   console.log(slicedAlphabet);
+  //   console.log("Sliced Alphabet: " + slicedAlphabet);
 
   for (var i = 0; i <= slicedAlphabet.length; i++) {
     // console.log("SLICED ALPHA INDEX: " + slicedAlphabet[i]);
@@ -47,12 +31,12 @@ function fearNotLetter(str) {
       return slicedAlphabet[i];
     }
   }
-  //   return;
 }
 
-console.log(fearNotLetter("abce"));
-console.log(fearNotLetter("aabcdefghjklmno"));
+// console.log(fearNotLetter("abce")); passing
+// console.log(fearNotLetter("abcdefghjklmno")); passing
 console.log(fearNotLetter("stvwx"));
-// console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"));
+console.log(fearNotLetter("bcdf"));
+// console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz")); passing
 
 // TIME 1:45 ONGOING
