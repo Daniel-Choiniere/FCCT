@@ -24,13 +24,35 @@
 
 function fearNotLetter(str) {
   var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  var arrAlphabet = alphabet.split("");
+  //   console.log(arrAlphabet);
+
   if (str == alphabet) {
-    return undefined;
+    return "undefined";
   }
-  return "Not undefined";
+
+  var alphabetIndex = arrAlphabet.indexOf(str[0]);
+  var endAlphabetindex = str.length;
+  //   console.log(alphabetIndex);
+  //   console.log(endAlphabetindex);
+
+  var slicedAlphabet = arrAlphabet.slice(alphabetIndex, endAlphabetindex);
+  //   console.log(slicedAlphabet);
+
+  for (var i = 0; i <= slicedAlphabet.length; i++) {
+    // console.log("SLICED ALPHA INDEX: " + slicedAlphabet[i]);
+    // console.log("STR INDEX: " + str[i]);
+
+    if (slicedAlphabet[i] != str[i]) {
+      return slicedAlphabet[i];
+    }
+  }
+  //   return;
 }
 
 console.log(fearNotLetter("abce"));
 console.log(fearNotLetter("aabcdefghjklmno"));
 console.log(fearNotLetter("stvwx"));
-console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"));
+// console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"));
+
+// TIME 1:45 ONGOING
