@@ -24,30 +24,58 @@ function whatIsInAName(collection, source) {
     // console.log(collection[i]);
     var collectionKeys = Object.keys(collection[i]);
     var sourceKeys = Object.keys(source);
-    console.log("Collection keys", collectionKeys);
-    console.log("Source keys", sourceKeys);
+    // console.log("Collection keys", collectionKeys);
+    // console.log("Source keys", sourceKeys);
   }
   return answer;
 }
 
-// var test1 = whatIsInAName(
-//   [
-//     { first: "Romeo", last: "Montague" },
-//     { first: "Mercutio", last: null },
-//     { first: "Tybalt", last: "Capulet" }
-//   ],
-//   { last: "Capulet" }
-// );
+//
+//
+//
+//
+//
+//
+//
+//
+var test1 = whatIsInAName(
+  [
+    { first: "Romeo", last: "Montague" },
+    { first: "Mercutio", last: null },
+    { first: "Tybalt", last: "Capulet" }
+  ],
+  { last: "Capulet" }
+);
 
-// var test2 = whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
-//   apple: 1
-// });
+var test2 = whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
+  apple: 1
+});
 
 var test3 = whatIsInAName(
   [{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
   { apple: 1, bat: 2 }
 );
 
-// console.log(test1);
-// console.log(test2);
-console.log(test3);
+var test4 = whatIsInAName(
+  [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
+  { apple: 1, cookie: 2 }
+);
+
+var test5 = whatIsInAName(
+  [
+    { apple: 1, bat: 2 },
+    { apple: 1 },
+    { apple: 1, bat: 2, cookie: 2 },
+    { bat: 2 }
+  ],
+  { apple: 1, bat: 2 }
+);
+
+var test6 = whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 });
+
+console.log("Test ONE: " + test1);
+console.log("Test TWO: " + test2);
+console.log("Test THREE: " + test3);
+console.log("Test FOUR: " + test4);
+console.log("Test FIVE: " + test5);
+console.log("Test SIX: " + test6);
