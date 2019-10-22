@@ -9,24 +9,25 @@
 
 function fearNotLetter(str) {
   var alphabet = "abcdefghijklmnopqrstuvwxyz";
-  var arrAlphabet = alphabet.split("");
-  //   console.log(arrAlphabet);
 
+  //   create an array of the alpahbet
+  var arrAlphabet = alphabet.split("");
+
+  //   check if the str is equal to the alphabet string if so just return undefined
   if (str == alphabet) {
     return undefined;
   }
 
+  //    make indexes for our slice
   var alphabetIndex = arrAlphabet.indexOf(str[0]);
   var endAlphabetindex = arrAlphabet.indexOf(str[str.length - 1]);
-  //   console.log(alphabetIndex, endAlphabetindex);
 
+  //   make a sub array of the alphabet to compare against what the str should be
   var slicedAlphabet = arrAlphabet.slice(alphabetIndex, endAlphabetindex);
-  //   console.log("Sliced Alphabet: " + slicedAlphabet);
 
+  //   loop through the slicedAlphabet comparing the str, if we hit a letter that doesnt
+  //   match we return the missng letter
   for (var i = 0; i <= slicedAlphabet.length; i++) {
-    // console.log("SLICED ALPHA INDEX: " + slicedAlphabet[i]);
-    // console.log("STR INDEX: " + str[i]);
-
     if (slicedAlphabet[i] != str[i]) {
       return slicedAlphabet[i];
     }
@@ -39,4 +40,4 @@ console.log(fearNotLetter("stvwx"));
 console.log(fearNotLetter("bcdf"));
 // console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz")); passing
 
-// TIME 1:45 ONGOING
+// TIME 1:57
