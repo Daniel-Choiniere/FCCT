@@ -16,23 +16,29 @@ function smallestCommons(arr) {
   var max = Math.max(...arr);
   //   console.log(min);
   //   console.log(max);
-  var allNumbers = [];
 
-  for (var i = min; i <= max; i++) {
-    allNumbers.push(i);
-  }
+  //   // create an array for all the numbers that will need to be checked for divisibility
+  //   var allNumbers = [];
+  //   for (var i = min; i <= max; i++) {
+  //     allNumbers.push(i);
+  //   }
 
-  for (var i = 0; i < allNumbers.length; i++) {
-    // console.log(allNumbers[i]);
-    console.log(i + 1);
+  //   for (var i = 0; i < 100; i++) {
+  //     // console.log(allNumbers[i]);
+  //     // console.log(i + 1);
 
-    if (allNumbers[i] % (i + 2) == 0) {
-      //   return i + 1;
-    }
-  }
+  //     if ((i + max) % allNumbers[i + 2] == 0) {
+  //       console.log("Eureka");
+  //     }
+  //   }
+  // find the GCD
+  var newB = max % min;
+  console.log(newB);
 }
 
-smallestCommons([5, 1]);
+smallestCommons([3, 1]);
+// // should return 6.
+// smallestCommons([5, 1]);
 // // should return 60.
 // smallestCommons([2, 10]);
 // // should return 2520.

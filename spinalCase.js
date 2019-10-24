@@ -6,10 +6,9 @@
 // loop through the array and build up a new string adding the dasehes
 
 function spinalCase(str) {
-  var destroyedCamelCase = str.replace(/([A-Z])/g, " $1").trim();
-  //   console.log(destroyedCamelCase);
-
-  var splitArr = destroyedCamelCase
+  var destroyedCamelCase = str
+    .replace(/([A-Z])/g, " $1")
+    .trim()
     .toLowerCase()
     .split(" ")
     .join("-")
@@ -17,7 +16,17 @@ function spinalCase(str) {
     .join("-")
     .split("--")
     .join("-");
-  return splitArr;
+  //   console.log(destroyedCamelCase);
+
+  // var splitArr = destroyedCamelCase
+  //   .toLowerCase()
+  //   .split(" ")
+  //   .join("-")
+  //   .split("_")
+  //   .join("-")
+  //   .split("--")
+  //   .join("-");
+  return destroyedCamelCase;
 }
 
 console.log(spinalCase("This Is Spinal Tap"));
