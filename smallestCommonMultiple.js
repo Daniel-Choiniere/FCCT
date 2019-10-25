@@ -12,37 +12,46 @@
 // return that number
 
 function smallestCommons(arr) {
-  var min = Math.min(...arr);
-  var max = Math.max(...arr);
-  //   console.log(min);
-  //   console.log(max);
+  // var min = Math.min(...arr);
+  // var max = Math.max(...arr);
 
-  //   // create an array for all the numbers that will need to be checked for divisibility
-  //   var allNumbers = [];
-  //   for (var i = min; i <= max; i++) {
-  //     allNumbers.push(i);
-  //   }
-
-  //   for (var i = 0; i < 100; i++) {
-  //     // console.log(allNumbers[i]);
-  //     // console.log(i + 1);
-
-  //     if ((i + max) % allNumbers[i + 2] == 0) {
-  //       console.log("Eureka");
-  //     }
-  //   }
-  // find the GCD
-  var newB = max % min;
-  console.log(newB);
+  let gcd = findGcd(arr);
+  // console.log(gcd);
+  lcm = findLcm(max, min, gcd);
+  console.log(lcm);
 }
 
-smallestCommons([3, 1]);
-// // should return 6.
+// find the GCD
+function findGcd(max, min) {
+  for (let i = 0; i < arr.length; i++) {
+    if (min == 0) {
+      let gcd = max;
+      return gcd;
+    } else {
+      let mod = max % min;
+      return findGcd(min, mod);
+    }
+  }
+}
+
+// Find the LCM
+function findLcm() {
+  // console.log(min);
+  // console.log(max);
+  // console.log(gcd);
+  lcm = (min * max) / gcd;
+  return lcm;
+}
+
+// smallestCommons([21, 6]);
+// should return 42.
+smallestCommons([3, 2, 1]);
+// // // should return 6.
 // smallestCommons([5, 1]);
-// // should return 60.
+// // // // should return 60.
 // smallestCommons([2, 10]);
-// // should return 2520.
+// // // // should return 2520.
 // smallestCommons([1, 13]);
-// // should return 360360.
+// // // // should return 360360.
 // smallestCommons([23, 18]);
-// // should return 6056820.
+// // // // should return 6056820.
