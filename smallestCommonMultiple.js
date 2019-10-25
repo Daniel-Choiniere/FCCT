@@ -6,10 +6,15 @@
 // For example, if given 1 and 3, find the smallest common multiple of both 1 and 3
 // that is also evenly divisible by all numbers between 1 and 3. The answer here would be 6.
 
-// create an array from all the numbers between the min and max number of the given array
-// check these numbers using modulo against all numbers up until we get one that
-// returns modulo 0 for all the new array numbers
-// return that number
+// -create an array from all the numbers between the min and max number of the given array
+// -find the greatest common factor of all the numbers and save it to a new array
+//      -divide the numbers that can be divided by the factor, numbers that cant be divided stay
+//          -check for a greatest common factor again
+//          -once no more factor/division is possible combine the original array and the factor array
+//      -loop through the combined array and multiply all the numbers together,
+//            this will give us our smallest common multiple
+//        -return this number
+//
 
 function smallestCommons(arr) {
   let fullArr = [];
