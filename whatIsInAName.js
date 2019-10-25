@@ -7,37 +7,34 @@
 
 function whatIsInAName(collection, source) {
   var answer = [];
+  var sourceKey = Object.keys(source);
+  console.log("Source key", sourceKey);
 
   for (var i = 0; i < collection.length; i++) {
     // console.log(collection[i]);
-    // var collectionKeys = Object.keys(collection[i]);
-    // var sourceKeys = Object.keys(source);
+    var collectionKeys = Object.keys(collection[i]);
 
     // var collectionValues = Object.values(collection[i]);
-    var sourceValues = Object.values(source);
+    // var sourceValues = Object.values(source);
 
-    // console.log("Collection keys", collectionKeys);
-    // console.log("Source keys", sourceKeys);
+    console.log("Collection keys", collectionKeys);
     // console.log("Collection values", collectionValues);
-    console.log("Source values", sourceValues);
+    // console.log("Source values", sourceValues);
 
     // if (collection[i].indexOf(sourceValues[i])) {
     // console.log(collection[i]);
     // console.log(sourceValues[i]);
 
-    if (
-      Object.values(collection[i]).indexOf(sourceValues[0]) > -1 &&
-      Object.values(collection[i]).indexOf(sourceValues[1]) > -1
-    ) {
-      // console.log(collection[i]);
-    }
+    //   if (
+    //     Object.values(collection[i]).indexOf(sourceValues[0]) > -1 &&
+    //     Object.values(collection[i]).indexOf(sourceValues[1]) > -1
+    //   ) {
+    //     // console.log(collection[i]);
+    //   }
   }
   // return answer;
 }
 
-// var obj = { a: "test1", b: "test2" };
-// if (Object.values(obj).indexOf("test1") > -1) {
-//   console.log("has test1");
 // }
 //
 //
@@ -47,14 +44,14 @@ function whatIsInAName(collection, source) {
 //
 //
 //
-// var test1 = whatIsInAName(
-//   [
-//     { first: "Romeo", last: "Montague" },
-//     { first: "Mercutio", last: null },
-//     { first: "Tybalt", last: "Capulet" }
-//   ],
-//   { last: "Capulet" }
-// );
+var test1 = whatIsInAName(
+  [
+    { first: "Romeo", last: "Montague" },
+    { first: "Mercutio", last: null },
+    { first: "Tybalt", last: "Capulet" }
+  ],
+  { last: "Capulet" }
+);
 
 // var test2 = whatIsInAName([{ apple: 1 }, { apple: 1 }, { apple: 1, bat: 2 }], {
 //   apple: 1
@@ -66,10 +63,10 @@ function whatIsInAName(collection, source) {
 // );
 
 // DOES NOT PASS - NEED TO HANDLE CHECKING BOTH THE SOURCE KEYS NOT JUST ONE
-var test4 = whatIsInAName(
-  [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
-  { apple: 1, cookie: 2 }
-);
+// var test4 = whatIsInAName(
+//   [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
+//   { apple: 1, cookie: 2 }
+// );
 
 // DOES NOT PASS
 // var test5 = whatIsInAName(
