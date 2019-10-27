@@ -5,14 +5,19 @@
 // and the second argument is { last: "Capulet" }, then you must return the third object from the array (the first argument),
 // because it contains the name and its value, that was passed on as the second argument.
 
-//
-//
-//
+// Loop through the collection
+//    Check the current iteration of collection, if it matches the source than push to a nerw array
+//  Return the new array
+
+// TIME: 3hrs
+// Was more difficult than I first estimated. Was trying various methods with multiple for loops, and trying to use indexOf.
+// At first I was able to pass all test cases with only one source object, but tests with more than one I had to reevaluate
+// Need to get more comfortable working with arrays of  objects.
 
 function whatIsInAName(collection, source) {
   let arr = collection.filter(function(item) {
-    for (let i in source) {
-      if (source[i] != item[i]) {
+    for (let match in source) {
+      if (source[match] != item[match]) {
         return false;
       }
     }
