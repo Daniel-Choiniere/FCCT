@@ -9,7 +9,7 @@
 //    Check the current iteration of collection, if it matches the source than push to a nerw array
 //  Return the new array
 
-// TIME: 3hrs
+// TIME: 3.5 hrs
 // Was more difficult than I first estimated. Was trying various methods with multiple for loops, and trying to use indexOf.
 // At first I was able to pass all test cases with only one source object, but tests with more than one I had to reevaluate
 // Need to get more comfortable working with arrays of  objects.
