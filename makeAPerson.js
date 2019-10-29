@@ -9,24 +9,60 @@
 
 var Person = function(firstAndLast) {
   // Complete the method below and implement the others similarly
-  this.getFullName = function() {
-    return "";
+  let splitName = firstAndLast.split(" ");
+  let first = splitName[0];
+  let last = splitName[1];
+
+  this.setFirstName = function() {
+    this.firstName = first;
   };
-  return firstAndLast;
+
+  this.setLasttName = function() {
+    this.lastName = last;
+  };
+
+  this.setFullName = function() {
+    let fullName = first + " " + last;
+  };
+
+  this.getFirstName = function() {
+    return first;
+  };
+
+  this.getLastName = function() {
+    return last;
+  };
+
+  this.getFullName = function() {
+    return first + " " + last;
+  };
 };
 
+var bob = new Person("Bob Ross");
+
 // TESTS
-Object.keys(bob).length;
+console.log(Object.keys(bob).length);
 // should return 6.
-bob instanceof Person;
+console.log(bob instanceof Person);
 // should return true.
-bob.firstName;
+console.log(bob.firstName);
 // should return undefined.
-bob.lastName;
+console.log(bob.lastName);
 // should return undefined.
-bob.getFirstName();
-// should return "Bob".
-bob.getLastName();
-// should return "Ross".
-bob.getFullName();
+console.log(bob.getFirstName());
+// // should return "Bob".
+console.log(bob.getLastName());
+// // should return "Ross".
+console.log(bob.getFullName());
 // should return "Bob Ross".
+
+console.log(bob.getFullName());
+// should return "Haskell Ross" after bob.setFirstName("Haskell").
+console.log(bob.getFullName());
+// should return "Haskell Curry" after bob.setLastName("Curry").
+console.log(bob.getFullName());
+// should return "Haskell Curry" after bob.setFullName("Haskell Curry").
+console.log(bob.getFirstName());
+// should return "Haskell" after bob.setFullName("Haskell Curry").
+console.log(bob.getLastName());
+// should return "Curry" after bob.setFullName("Haskell Curry").
