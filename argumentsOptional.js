@@ -11,16 +11,37 @@
 
 // If either argument isn't a valid number, return undefined.
 
-function addTogether() {}
+function addTogether() {
+  if (typeof arguments[0] != "number") {
+    return undefined;
+  }
+  if (!arguments[1]) {
+    let theArgument = arguments[0];
+    return function(n) {
+      if (typeof n != "number") {
+        return undefined;
+      }
+      return theArgument + n;
+    };
+  } else if (typeof arguments[1] != "number") {
+    return undefined;
+  }
+  let sumArgs = arguments[0] + arguments[1];
+  return sumArgs;
+}
+
+// TIME: 55 min
+
+//  Had issue with understanding how and where to return a function when needed
 
 // TESTS
-addTogether(2, 3);
+console.log(addTogether(2, 3));
 // should return 5.
-addTogether(2)(3);
-// should return 5.
-addTogether("http://bit.ly/IqT6zt");
-// should return undefined.
-addTogether(2, "3");
-// should return undefined.
-addTogether(2)([3]);
-// should return undefined.
+console.log(addTogether(2)(3));
+// // should return 5.
+console.log(addTogether("http://bit.ly/IqT6zt"));
+// // should return undefined.
+console.log(addTogether(2, "3"));
+// // should return undefined.
+console.log(addTogether(2)([3]));
+// // should return undefined.
