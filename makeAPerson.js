@@ -7,6 +7,9 @@
 // setLastName(last)
 // setFullName(firstAndLast)
 
+// TIME: 85 mins
+// Was having an issue with intializing the second object, had first half of test cases passing
+
 var Person = function(firstAndLast) {
   // Complete the method below and implement the others similarly
   var first, last;
