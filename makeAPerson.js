@@ -9,21 +9,15 @@
 
 var Person = function(firstAndLast) {
   // Complete the method below and implement the others similarly
-  let splitName = firstAndLast.split(" ");
-  let first = splitName[0];
-  let last = splitName[1];
-
-  this.setFirstName = function() {
-    this.firstName = first;
+  var first, last;
+  var splitName = function(wholeName) {
+    wholeName = wholeName.split(" ");
+    first = wholeName[0];
+    last = wholeName[1];
+    return first, last;
   };
 
-  this.setLasttName = function() {
-    this.lastName = last;
-  };
-
-  this.setFullName = function() {
-    let fullName = first + " " + last;
-  };
+  splitName(firstAndLast);
 
   this.getFirstName = function() {
     return first;
@@ -36,9 +30,24 @@ var Person = function(firstAndLast) {
   this.getFullName = function() {
     return first + " " + last;
   };
+
+  this.setFirstName = function(input) {
+    first = input;
+    return first;
+  };
+
+  this.setLastName = function(input) {
+    last = input;
+    return last;
+  };
+
+  this.setFullName = function(input) {
+    return splitName(input);
+  };
 };
 
 var bob = new Person("Bob Ross");
+bob.getFullName();
 
 // TESTS
 console.log(Object.keys(bob).length);
@@ -55,6 +64,8 @@ console.log(bob.getLastName());
 // // should return "Ross".
 console.log(bob.getFullName());
 // should return "Bob Ross".
+
+console.log("-----BREAK-----");
 
 console.log(bob.getFullName());
 // should return "Haskell Ross" after bob.setFirstName("Haskell").
