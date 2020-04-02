@@ -17,6 +17,7 @@
 //
 
 function smallestCommons(arr) {
+  console.log(arr);
   let fullArr = [];
   let min = Math.min(...arr);
   let max = Math.max(...arr);
@@ -52,7 +53,7 @@ function findGcd(max, min) {
   }
 }
 
-smallestCommons([21, 6]);
+console.log(smallestCommons([21, 6]));
 // should return 42.
 smallestCommons([3, 1]);
 // // // should return 6.
